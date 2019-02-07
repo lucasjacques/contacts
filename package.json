@@ -1,0 +1,24 @@
+{
+  "name": "contacts",
+  "version": "1.0.0",
+  "description": "Simple CRUD webapp using the MEAN stack, which will manage a contact list (doing this for learning purposes)",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasjacques/contacts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasjacques/contacts/issues"
+  },
+  "homepage": "https://github.com/lucasjacques/contacts#readme"
+}
