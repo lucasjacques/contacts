@@ -1,5 +1,5 @@
 # contacts
-Simple CRUD webapp using the MEAN stack, which will manage a contact list (doing this for learning purposes) 
+Simple CRUD webapp using the MEAN stack, which manages a contact list (doing this for learning purposes) 
 
 ## Getting Started
 
