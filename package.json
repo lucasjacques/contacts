@@ -4,7 +4,9 @@
   "description": "Simple CRUD webapp using the MEAN stack, which will manage a contact list (doing this for learning purposes)",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongojs": "^2.6.0"
   },
   "devDependencies": {},
   "scripts": {
