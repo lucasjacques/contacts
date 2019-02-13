@@ -7,7 +7,6 @@ let myApp = angular.module('myApp', []);
 		let refresh = function () {
 			$http.get('/contactList').then(
 			function (response) {
-				console.log('I got the data I requested');
 				$scope.contactList = response.data;
 				$scope.contact = {};
 			}).catch(
@@ -20,9 +19,15 @@ let myApp = angular.module('myApp', []);
 			console.log($scope.contact);
 			$http.post('/contactList', $scope.contact).then(
 			function (response) {
-				console.log(response);
 				refresh();
 			});
+		}
+
+		$scope.remove = function (id) {
+			$http.delete('/contactList/' + id).then(
+				function (response) {
+					refresh();
+				});
 		}
 	});
 })(myApp);

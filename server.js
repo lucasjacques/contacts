@@ -9,16 +9,25 @@ app.use(bodyParser.json());
 
 app.get('/contactList', function (req, res) {
 	console.log('I received a GET request');
-	db.contactlist.find(function (err, docs) {
-        console.log(docs);
-        res.json(docs);
+	db.contactlist.find(function (err, doc) {	
+		console.log('Returned ' + doc.length + ' documents');
+        res.json(doc);
     });
 });
+
 app.post('/contactList',function (req, res) {
-    console.log(req.body);
     db.contactlist.insert(req.body, function (err, doc) {
+        console.log(doc);
         res.json(doc);
     })
+});
+
+app.delete('/contactList/:id', function(req, res){
+	var id = req.params.id;
+	db.contactlist.remove({_id: mongojs.ObjectId(id)}, function (err, doc) {
+        console.log(doc);
+		res.json(doc);
+	})
 });
 
 let port = 3500;
