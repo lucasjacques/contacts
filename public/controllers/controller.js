@@ -29,5 +29,13 @@ let myApp = angular.module('myApp', []);
 					refresh();
 				});
 		}
+		$scope.edit = function (id) {
+			console.log(id);
+			$http.get('/contactList/' + id).then(
+				function (response) {
+					$scope.contact = response;
+					// refresh();
+				});
+		}
 	});
 })(myApp);

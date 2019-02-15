@@ -19,7 +19,7 @@ app.post('/contactList',function (req, res) {
     db.contactlist.insert(req.body, function (err, doc) {
         console.log(doc);
         res.json(doc);
-    })
+    });
 });
 
 app.delete('/contactList/:id', function(req, res){
@@ -27,7 +27,15 @@ app.delete('/contactList/:id', function(req, res){
 	db.contactlist.remove({_id: mongojs.ObjectId(id)}, function (err, doc) {
         console.log(doc);
 		res.json(doc);
-	})
+	});
+});
+
+app.get('/contactList/:id', function (req, res) {
+	let id = req.params.id;
+	console.log(id);
+	db.contactlist.findOne({_id: mongojs.ObjectId(id)}, function (err, doc) {
+		res.json(doc);
+	});
 });
 
 let port = 3500;
